@@ -149,51 +149,79 @@
                                     data: $('#formLogin').serialize() + '&action=login',
                                     success: function(resposta) {
                                         $('#alerta').show();
-                                        $('#resultado').html(resposta);
+                                        $('#resultado').html("resposta" + resposta);
                                     }
                                 });
                             }
                         });
 
                         // Formulário de Cadastro de usuario
-                        $("#btnRegistrar").click();
-
-                        // Formulário para mudar de senha
-                        $("#btnEnviarEmail").click();
-
-                        //Trocar da Tela de Login para Recuperar Senha
-                        $("#btnEsqueci").click(function() {
-                            $("#caixaLogin").hide();
-                            $("#caixaRecuperarSenha").show();
-                        });
-                        //Voltar para a tela de Login
-                        $("#btnVoltar").click(function() {
-                            $("#caixaLogin").show();
-                            $("#caixaRecuperarSenha").hide();
-                        });
-                        //Trocar de tela de Login para cadastro de usuário
-                        $('#btnCadastrar').click(function() {
-                            $("#caixaLogin").hide();
-                            $("#caixaCadastro").show();
-                        });
-                        //Voltar para a tela de Login
-                        $('#btnJáCadastrado').click(function() {
-                            $("#caixaLogin").show(); //mostrar
-                            $("#caixaCadastro").hide(); //ocultar
-                        });
-                        //jQuery Validation chão chão
-                        $("#formLogin").validate();
-                        $("#formSenha").validate();
-                        $.validator.setDefaults({
-                            success: "valid"
-                        });
-                        $("#formCadastro").validate({
-                            rules: {
-                                senhaConfirma: {
-                                    equalTo: "#senhaUsuário"
-                                }
+                        $("#btnRegistrar").click(function(e) {
+                            let formCadastro = document.querySelector('#formCadastro')
+                            if (formCadastro.checkValidity()) {
+                                e.preventDefault(); // Sem recarregar o formulário
+                                $.ajax({
+                                    url: 'recebe.php',
+                                    method: 'post',
+                                    data: $('#formCadastro').serialize() + '&action=cadastro',
+                                    success: function(resposta) {
+                                        $('#alerta').show();
+                                        $('#resultado').html("resposta" + resposta);
+                                    }
+                                });
                             }
                         });
+
+                        // Formulário para mudar de senha
+                        $("#btnEnviarEmail").click(function(e) {
+                            let formSenha = document.querySelector('#formSenha')
+                            if (formSenha.checkValidity()) {
+                                e.preventDefault(); // Sem recarregar o formulário
+                                $.ajax({
+                                    url: 'recebe.php',
+                                    method: 'post',
+                                    data: $('#formSenha').serialize() + '&action=senha',
+                                    success: function(resposta) {
+                                        $('#alerta').show();
+                                        $('#resultado').html("resposta" + resposta);
+                                    }
+                                });
+                            }
+                        });
+
+                    //Trocar da Tela de Login para Recuperar Senha
+                    $("#btnEsqueci").click(function() {
+                        $("#caixaLogin").hide();
+                        $("#caixaRecuperarSenha").show();
+                    });
+                    //Voltar para a tela de Login
+                    $("#btnVoltar").click(function() {
+                        $("#caixaLogin").show();
+                        $("#caixaRecuperarSenha").hide();
+                    });
+                    //Trocar de tela de Login para cadastro de usuário
+                    $('#btnCadastrar').click(function() {
+                        $("#caixaLogin").hide();
+                        $("#caixaCadastro").show();
+                    });
+                    //Voltar para a tela de Login
+                    $('#btnJáCadastrado').click(function() {
+                        $("#caixaLogin").show(); //mostrar
+                        $("#caixaCadastro").hide(); //ocultar
+                    });
+                    //jQuery Validation chão chão
+                    $("#formLogin").validate();
+                    $("#formSenha").validate();
+                    $.validator.setDefaults({
+                        success: "valid"
+                    });
+                    $("#formCadastro").validate({
+                    rules: {
+                        senhaConfirma: {
+                            equalTo: "#senhaUsuário"
+                        }
+                    }
+                    });
                     });
                     /*
                      * Translated default messages for the jQuery validation plugin.
