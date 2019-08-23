@@ -34,10 +34,10 @@
                             <h2 class="text-center mt-2">Entrada no sistema</h2>
                             <form id="formLogin" class="p-2">
                                 <div class="form-group">
-                                    <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" minlength="5" required autocomplete="off">
+                                    <input type="text" name="nomeUsuario" id="nomeUsuário" class="form-control" placeholder="Nome do usuário" minlength="5" required autocomplete="off">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" required minlength="6">
+                                    <input type="password" name="senhaUsuario" id="senhaUsuário" class="form-control" placeholder="Senha" required minlength="6">
                                 </div>
                                 <div class="form-group mt-5">
                                     <div class="custom-control custom-checkbox">
