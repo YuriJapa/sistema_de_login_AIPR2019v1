@@ -24,6 +24,7 @@ require_once 'session.php';
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
+
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -34,8 +35,8 @@ require_once 'session.php';
                     <a class="nav-link" href="#">Link 2</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?= $usuario ?>
+                    <a class="nav-link dropdown-toggle" href="# id=" navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Usuário !
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Configurações</a>
@@ -47,10 +48,20 @@ require_once 'session.php';
         </div>
     </nav>
     <main class="container mt-4">
-        <h1 class="text-light">Perfil de usuário</h1>
-        <h2 class="text-light">Nome: <?= $nome ?>
-            <h2 class="text-light">E-mail: <?= $email ?>
-                <h2 class="text-light">Data de Cadastro: <?= $dataCriacao ?>
+
+        <div class="row">
+            <div class="offset-lg-2 col-3">
+                <img src="<?= $urlAvatar ?>" alt="Foto de <?= $usuario ?>" 
+                height="200" width="200"/>
+            </div>
+            <div class="col-7">
+                <h1 class="text-light">Perfil de usuário</h1>
+                <h2 class="text-light">Nome: Yuri Gonçalves De Moraes
+                <h2 class="text-light">E-mail: goncalvesyuri66@gmail.com
+                <h2 class="text-light">Data de Cadastro: 2019/09/06 16:22:10
+            </div>
+        </div>
+
     </main>
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
