@@ -39,9 +39,9 @@ require_once 'session.php';
                         JapaDudi
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Configurações</a>
+                        <a class="dropdown-item" href="#">Fotos</a>
+                        <a class="dropdown-item" href="#">Config.</a>
                         <a class="dropdown-item" href="sair.php">Sair</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
             </ul>
@@ -51,14 +51,13 @@ require_once 'session.php';
 
         <div class="row">
             <div class="offset-lg-2 col-3">
-                <img src="<?= $urlAvatar ?>" alt="Foto de <?= $usuario ?>" 
-                height="200" width="200"/>
+                <img src="<?= $urlAvatar ?>" alt="Foto de <?= $usuario ?>" height="200" width="200" />
             </div>
             <div class="col-7">
                 <h1 class="text-light">Perfil de usuário</h1>
                 <h2 class="text-light">Nome: Yuri Gonçalves De Moraes
-                <h2 class="text-light">E-mail: goncalvesyuri66@gmail.com
-                <h2 class="text-light">Data de Cadastro: 2019/09/06 16:22:10
+                    <h2 class="text-light">E-mail: goncalvesyuri66@gmail.com
+                        <h2 class="text-light">Data de Cadastro: 2019/09/06 16:22:10
             </div>
         </div>
 
