@@ -9,8 +9,8 @@ de dados.
 
 ## aula07 - 10/09/2019
 Na tarde de 09/08 os alunos visitaram a Havan Liberty.
-na tarde de hoje fizeram o desafio de adicionar,
-uma imagem de Avatar na página profile.php
+
+Na tarde de hoje fizeram o desafio de adicionar,uma imagem de Avatar na página profile.php
 
 ## aula CÊSXXX - 30/08/2019
 Última sexta-feira de agosto de 2019!
