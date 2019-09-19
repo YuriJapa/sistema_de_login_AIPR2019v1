@@ -27,10 +27,20 @@ if(isset($_POST['action']) &&
             //Existe o usuário no Banco de Dados
             //Só para testar / debug
             //echo "<p class=\"text-success\">E-mail não encontrado</P>";
-            $frase = "BatAtinh4!@#$%NascexexEsparr4m4PeloChao&*";
-            $frase_secreta = str_shuffle($frase);
-            $token = substr($frase_secreta,0,10);
-            echo "<p>$token</p>";
+            $frase = "BatAtinh4Quando123456NascexexEsparr4m4PeloChao";
+            $frase_secreta = str_shuffle($frase);//Embaralha a frase
+            $token = substr($frase_secreta,0,10);//10 primeiros caracteres
+            //echo "<p>$token</p>";
+            $sql = $conecta->prepare("UPDATE usuario SET token = ?,
+            tempo_de_vida = DATE_ADD(NOW(), INTERVAL 1 MINUTE) 
+            WHERE email = ?");
+            $sql->bind_param("ss", $token, $emailSenha);
+            $sql->execute();
+            //Criação do link para gerar nova senha
+            $link = "<a href=\"gerar_senha.php?token=$token\">
+            Clique aqui para gerar uma nova senha</a>";
+            //Este link deve ser enviado por e-mail
+            echo $link;
         }else{
             echo '<p class="text-danger">E-mail não encontrado</P> ';
         }
